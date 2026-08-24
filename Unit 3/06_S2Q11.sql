@@ -1,0 +1,5 @@
+-- Gargi Chauhan | Roll No. 06
+SET SERVEROUTPUT ON;
+DECLARE CURSOR c IS SELECT book_id,title,price FROM book ORDER BY price DESC;
+BEGIN FOR r IN c LOOP DBMS_OUTPUT.PUT_LINE(c%ROWCOUNT||' - '||r.title||' - Rs.'||r.price); EXIT WHEN c%ROWCOUNT=5; END LOOP; END;
+/
